@@ -5,6 +5,6 @@ Projektarbete
 
 
 Oscar Werner
-Mikaela xxx
-Oscar Andreasson
-Emilia
+Mikaela Holmer,
+Oscar Andreasson,
+Emilia Thunell,
