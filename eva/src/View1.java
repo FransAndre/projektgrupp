@@ -1,11 +1,13 @@
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JTable;
 
 
 public class View1 {
 
 	private JFrame frame;
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -35,8 +37,12 @@ public class View1 {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		table = new JTable();
+		table.setBounds(69, 99, 334, 312);
+		frame.getContentPane().add(table);
 	}
-
 }
