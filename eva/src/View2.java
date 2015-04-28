@@ -1,51 +1,67 @@
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.Image;
-
-import javax.swing.JFrame;
-
-import java.sql.*;
-
-import javax.swing.*;
-
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-public class Login {
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
-	private JFrame frame;
+public class View2 extends JFrame {
+
+	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Login window = new Login();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
+	// public static void main(String[] args) {
+	// EventQueue.invokeLater(new Runnable() {
+	// public void run() {
+	// try {
+	// View2 window = new View2();
+	// window.frame.setVisible(true);
+	// } catch (Exception e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// });
+	// }
+	//
 	Connection conn = null;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private JFrame frame;
 
 	/**
-	 * Create the application.
+	 * Create the frame.
 	 */
-	public Login() {
-		initialize();
+	public View2() {
+		EventQueue.invokeLater(new Runnable() {
+		public void run() {
+			try {
+				View2 window = new View2();
+				window.frame.setVisible(true);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		}
+		
 		conn = dbConnection.dbConnector();
-	}
-
-	/**
-	 * Initialize the contents of the frame.
-	 */
-	public void initialize() {
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
 		frame = new JFrame();
 		frame.setBounds(100, 100, 658, 468);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
